@@ -1,0 +1,19 @@
+%main.previous-proposals-page.main-container
+  .previous-proposals-page__previous-proposals
+    %h2.lmo-h2 Previous proposals
+    %ul.previous-proposals-page__previous-proposals-list
+      %li.previous-proposals-page__previous-proposal.media{ng-repeat: 'proposal in previousProposalsPage.group.closedProposals() track by proposal.id'}
+        %proposal_closing_time.proposal-collapsed__closed-at.pull-right{proposal: 'proposal'}.
+        .media-left
+          .proposal-collapsed__icon
+            .proposal-collapsed__pie-container
+              %pie_chart.proposal-collapsed__pie-canvas{votes: 'proposal.voteCounts'}
+              .proposal-collapsed__position-icon-container
+                .proposal-collapsed__position-icon{ng-if: 'lastVoteByCurrentUser(proposal)', class: 'thread-preview__position-icon--{{lastVoteByCurrentUser(proposal).position}} '}
+                .proposal-collapsed__undecided-icon{ng-if: '!lastVoteByCurrentUser(proposal)'}
+                  %i.fa.fa-question
+        .proposal-collapsed-body.media-body
+          .proposal-collapsed-title
+            {{proposal.name}}
+          .proposal-collapsed__outcome{ng-if: 'proposal.hasOutcome()', translate: 'proposal_collapsed.outcome', translate-value-outcome: '{{proposal.outcome}}'}
+        .clearfix

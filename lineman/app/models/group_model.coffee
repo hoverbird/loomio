@@ -17,6 +17,13 @@ angular.module('loomioApp').factory 'GroupModel', (BaseModel, AppConfig) ->
       @hasMany 'subgroups', from: 'groups', with: 'parentId', of: 'id'
       @belongsTo 'parent', from: 'groups'
 
+    proposals: ->
+      @recordStore.proposals.find(discussionId: {'$in': _.map(@discussions(), (d) -> d.id)})
+
+    closedProposals: ->
+      _.filter @proposals(), (proposal) ->
+        proposal.isClosed()
+
     pendingMembershipRequests: ->
       _.filter @membershipRequests(), (membershipRequest) ->
         membershipRequest.isPending()

@@ -24,6 +24,12 @@ class API::MotionsController < API::RestfulController
     respond_with_resource
   end
 
+  def closed
+    load_and_authorize :group
+    @motions = @group.closed_motions.order(closed_at: :desc)
+    respond_with_collection
+  end
+
   private
 
   def visible_records

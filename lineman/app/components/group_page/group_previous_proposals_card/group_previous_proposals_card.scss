@@ -1,0 +1,14 @@
+.group-previous-proposals-card {
+  @include card;
+}
+
+.group-previous-proposals-card__previous_proposals {
+  padding: 0px;
+}
+
+.group-previous-proposals-card__previous_proposal {
+  position: relative;
+  display: block;
+  margin: 0 -17px;
+  padding: 7px 17px;
+}

@@ -110,6 +110,7 @@ Loomio::Application.routes.draw do
       post :close, on: :member
       post :create_outcome, on: :member
       post :update_outcome, on: :member
+      get  :closed, on: :collection
     end
 
     resources :votes,       only: [       :index, :create, :update] do

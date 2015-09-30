@@ -1,0 +1,24 @@
+.previous-proposals-page {
+  margin: 0px auto;
+  max-width: $main-max-width;
+  .align-center { text-align: center; }
+}
+
+.previous-proposals-page__previous-proposals {
+  @include card;
+  padding-top: 10px;
+  clear: both;
+  position: relative;
+  top: 25px;
+}
+
+.previous-proposals-page__previous-proposals-list {
+  padding-left: 0px;
+}
+
+.previous-proposals-page__previous-proposal {
+  position: relative;
+  display: block;
+  margin: 0 -17px;
+  padding: 7px 17px;
+}
