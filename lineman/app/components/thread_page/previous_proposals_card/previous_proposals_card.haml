@@ -5,5 +5,5 @@
     .active-proposal{ng-if: 'selectedProposalId == proposal.id'}
       %proposal_expanded{proposal: 'proposal', can_collapse: 'true'}
 
-    .inactive-proposal{ng-if: 'selectedProposalId != proposal.id', ng_click: 'selectProposal(proposal)'}
+    .inactive-proposal{ng-if: 'selectedProposalId != proposal.id', ng-click: 'selectProposal(proposal)'}
       %proposal_collapsed{proposal: 'proposal'}

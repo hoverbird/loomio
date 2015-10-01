@@ -2,7 +2,6 @@ class MotionSerializer < ActiveModel::Serializer
   embed :ids, include: true
   attributes :id,
              :key,
-             :discussion_id,
              :name,
              :description,
              :outcome,
@@ -18,6 +17,7 @@ class MotionSerializer < ActiveModel::Serializer
 
   has_one :author, serializer: UserSerializer, root: 'users'
   has_one :outcome_author, serializer: UserSerializer, root: 'users'
+  has_one :discussion
 
 
   def filter(keys)
