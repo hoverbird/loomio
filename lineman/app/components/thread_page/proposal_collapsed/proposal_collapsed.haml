@@ -3,8 +3,8 @@
     {{proposal.name}}.
     %proposal_closing_time{proposal: 'proposal'}.
   .screen-only{aria-hidden: 'true'}
-    %proposal_closing_time.proposal-collapsed__closed-at.pull-right{proposal: 'proposal'}.
-    .proposal-collapsed__expand.pull-right{translate: 'proposal_collapsed.expand'}
+    %proposal_closing_time.proposal-collapsed__closed-at.pull-right{ng-if: '!compact', proposal: 'proposal'}.
+    .proposal-collapsed__expand.pull-right{ng-if: '!compact', translate: 'proposal_collapsed.expand'}
     .media-left
       .proposal-collapsed__icon
         .proposal-collapsed__pie-container
@@ -16,5 +16,5 @@
     .proposal-collapsed__body.media-body
       .proposal-collapsed__title
         {{proposal.name}}
-      .proposal-collapsed__outcome{ng-if: 'proposal.hasOutcome()', translate: 'proposal_collapsed.outcome', translate-value-outcome: '{{proposal.outcome}}'}
+      .proposal-collapsed__outcome{ng-if: 'proposal.hasOutcome() && !compact', translate: 'proposal_collapsed.outcome', translate-value-outcome: '{{proposal.outcome}}'}
     .clearfix

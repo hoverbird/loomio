@@ -3,13 +3,7 @@
   %ul.group-previous-proposals-card__previous_proposals
     %li.group-previous-proposals-card__previous_proposal.media{ng-repeat: 'proposal in group.closedProposals() | limitTo: 5 track by proposal.id'}
       .media-left
-        .proposal-collapsed__icon
-          .proposal-collapsed__pie-container
-            %pie_chart.proposal-collapsed__pie-canvas{votes: 'proposal.voteCounts'}
-            .proposal-collapsed__position-icon-container
-              .proposal-collapsed__position-icon{ng-if: 'lastVoteByCurrentUser(proposal)', class: 'thread-preview__position-icon--{{lastVoteByCurrentUser(proposal).position}} '}
-              .proposal-collapsed__undecided-icon{ng-if: '!lastVoteByCurrentUser(proposal)'}
-                %i.fa.fa-question
+        %pie_with_position{proposal: 'proposal'}
       .proposal-collapsed-body.media-body
         .proposal-collapsed-title
           {{proposal.name}}
