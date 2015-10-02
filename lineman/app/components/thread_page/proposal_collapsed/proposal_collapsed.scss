@@ -1,4 +1,4 @@
-.proposal-collapsed{
+.proposal-collapsed {
   position: relative;
   display: block;
   color: $primary-text-color;
@@ -11,16 +11,16 @@
   padding-top: 5px;
 }
 
-.proposal-collapsed:hover{
+.proposal-collapsed:hover {
   background-color: $list-hover-color;
   text-decoration: none;
 }
 
-.proposal-collapsed__outcome{
+.proposal-collapsed__outcome {
   color: $grey-on-white;
 }
 
-.proposal-collapsed__expand{
+.proposal-collapsed__expand {
   clear: both;
   margin-top: 1em;
   @include fontSmall;
