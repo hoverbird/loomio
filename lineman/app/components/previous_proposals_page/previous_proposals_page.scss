@@ -5,7 +5,7 @@
 }
 
 .previous-proposals-page__previous-proposals {
-  @include card;
+  @include cardNoPadding;
   padding-top: 10px;
   clear: both;
   position: relative;

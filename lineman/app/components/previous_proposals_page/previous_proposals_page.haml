@@ -1,5 +1,4 @@
 %main.previous-proposals-page.main-container
   .previous-proposals-page__previous-proposals
-    %h2.lmo-h2 Previous proposals
-    .previous-proposals-page__previous-proposal{ng-repeat: 'proposal in previousProposalsPage.group.closedProposals() track by proposal.id'}
-      %proposal_collapsed{proposal: 'proposal'}
+    %h1.lmo-h1{style: 'padding: 0 15px', translate: 'previous_proposals_page.heading'}
+    %proposal_accordian{ng-if: 'group', proposals: 'previousProposalsPage.previousProposals'}

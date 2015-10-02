@@ -3,9 +3,10 @@ angular.module('loomioApp').controller 'PreviousProposalsPageController', ($scop
 
   Records.groups.findOrFetchById($routeParams.key).then (group) =>
     Records.proposals.fetchClosedByGroup(group.key).then =>
-      @group = group
+      Records.votes.fetchMyVotesByProposals(group.closedProposals()).then =>
+        $scope.group = group
 
   @previousProposals = =>
-    @group.closedProposals()
+    $scope.group.closedProposals()
 
   return

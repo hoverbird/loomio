@@ -235,6 +235,7 @@ Loomio::Application.routes.draw do
       post :edit_description
       delete :leave_group
       get :members_autocomplete
+      get :previous_proposals, to: :show 
     end
 
     resources :motions,     only: [:index]

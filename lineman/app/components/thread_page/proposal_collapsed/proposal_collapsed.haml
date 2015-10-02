@@ -1,20 +1,11 @@
-%a.proposal-collapsed.media{href: '', id: 'proposal-{{proposal.key}}'}
+%a.proposal-collapsed{href: '', id: 'proposal-{{proposal.key}}'}
   .sr-only
     {{proposal.name}}.
     %proposal_closing_time{proposal: 'proposal'}.
-  .screen-only{aria-hidden: 'true'}
-    %proposal_closing_time.proposal-collapsed__closed-at.pull-right{ng-if: '!compact', proposal: 'proposal'}.
-    .proposal-collapsed__expand.pull-right{ng-if: '!compact', translate: 'proposal_collapsed.expand'}
-    .media-left
-      .proposal-collapsed__icon
-        .proposal-collapsed__pie-container
-          %pie_chart.proposal-collapsed__pie-canvas{votes: 'proposal.voteCounts'}
-          .proposal-collapsed__position-icon-container
-            .proposal-collapsed__position-icon{ng-if: 'lastVoteByCurrentUser(proposal)', class: 'thread-preview__position-icon--{{lastVoteByCurrentUser(proposal).position}} '}
-            .proposal-collapsed__undecided-icon{ng-if: '!lastVoteByCurrentUser(proposal)'}
-              %i.fa.fa-question
-    .proposal-collapsed__body.media-body
+  .screen-only.proposal-collapsed__flex{aria-hidden: 'true'}
+    %pie_with_position{proposal: 'proposal'}
+    .proposal-collapsed__body
+      %proposal_closing_time.proposal-collapsed__closed-at{proposal: 'proposal'}.
       .proposal-collapsed__title
         {{proposal.name}}
-      .proposal-collapsed__outcome{ng-if: 'proposal.hasOutcome() && !compact', translate: 'proposal_collapsed.outcome', translate-value-outcome: '{{proposal.outcome}}'}
-    .clearfix
+      .proposal-collapsed__outcome{ng-if: 'proposal.hasOutcome()', translate: 'proposal_collapsed.outcome', translate-value-outcome: '{{proposal.outcome}}'}
