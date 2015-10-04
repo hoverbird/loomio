@@ -428,6 +428,11 @@ en:
     heading: 'Membership Requests'
     manage_requests: Manage requests ({{count}})
 
+  group_help_card:
+    title: Help
+    ten_tips_article_title: 10 tips for making great decisions with Loomio
+    nine_ways_to_use_proposals: 9 ways to use a Loomio proposal to turn a conversation into action
+
   membership_requests_page:
     heading: Membership Requests
     approve: Approve
@@ -466,6 +471,7 @@ en:
     import_contacts: 'Import contacts'
     instructions: 'Enter names or email addresses'
     invitation_message: 'Invitation Message'
+    remove_invite: 'Remove invitation'
     send_invite: 'Send {{count}} invites'
     to: 'to: '
     add_custom_message: '+ add custom message'
@@ -644,6 +650,7 @@ en:
     aria_label: 'Thread context'
     thread_options: 'Thread options'
     edit_thread: 'Edit thread'
+    move_thread: 'Move thread'
     delete_thread: 'Delete thread'
 
   delete_thread_form:
@@ -653,6 +660,12 @@ en:
     messages:
       success: Thread deleted
 
+  move_thread_form:
+    title: Move thread
+    body: 'Destination group:'
+    confirm: Move thread
+    messages:
+      success: Thread has been moved to {{name}}
 
   activity_card:
     new_activity: New Activity
