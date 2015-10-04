@@ -2,11 +2,8 @@ angular.module('loomioApp').controller 'PreviousProposalsPageController', ($scop
   $rootScope.$broadcast('currentComponent', { page: 'previousProposalsPage'})
 
   Records.groups.findOrFetchById($routeParams.key).then (group) =>
-    Records.proposals.fetchClosedByGroup(group.key).then =>
-      Records.votes.fetchMyVotesByProposals(group.closedProposals()).then =>
-        $scope.group = group
-
-  @previousProposals = =>
-    $scope.group.closedProposals()
+    @group = group
+    Records.proposals.fetchClosedByGroup($routeParams.key).then =>
+      Records.votes.fetchMyVotesByProposals(group.closedProposals())
 
   return

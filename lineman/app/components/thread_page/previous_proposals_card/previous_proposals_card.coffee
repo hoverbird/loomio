@@ -14,6 +14,4 @@ angular.module('loomioApp').directive 'previousProposalsCard', ->
     $scope.anyProposals = ->
       $scope.discussion.closedProposals().length > 0
 
-    $scope.proposals = ->
-      $scope.discussion.closedProposals()
     return
