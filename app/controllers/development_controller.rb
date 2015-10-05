@@ -24,6 +24,10 @@ class DevelopmentController < ApplicationController
     "http://localhost:8000/inbox"
   end
 
+  def previous_proposals_url(group)
+    "http://localhost:8000/#{discussion.key}/previous_proposals"
+  end
+
   def setup_dashboard
     cleanup_database
     sign_in patrick
@@ -149,6 +153,14 @@ class DevelopmentController < ApplicationController
     test_proposal
     MotionService.close(test_proposal)
     redirect_to discussion_url(test_discussion)
+  end
+
+  def setup_previous_proposals
+    cleanup_database
+    sign_in patrick
+    test_proposal
+    MotionService.close(test_proposal)
+    redirect_to previous_proposals_url(test_discussion)
   end
 
   def setup_proposal_closing_soon

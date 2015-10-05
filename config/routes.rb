@@ -23,6 +23,7 @@ Loomio::Application.routes.draw do
     get 'setup_group_with_pending_invitation'
     get 'setup_group_with_subgroups'
     get 'setup_public_group_with_public_content'
+    get 'setup_previous_proposals'
   end
 
   scope '/angular', controller: 'angular', path: 'angular', as: 'angular' do

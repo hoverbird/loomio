@@ -11,14 +11,12 @@ angular.module('loomioApp').factory 'GroupModel', (BaseModel, AppConfig) ->
 
     relationships: ->
       @hasMany 'discussions'
+      @hasMany 'proposals'
       @hasMany 'membershipRequests'
       @hasMany 'memberships'
       @hasMany 'invitations'
       @hasMany 'subgroups', from: 'groups', with: 'parentId', of: 'id'
       @belongsTo 'parent', from: 'groups'
-
-    proposals: ->
-      @recordStore.proposals.find(discussionId: {'$in': _.map(@discussions(), (d) -> d.id)})
 
     closedProposals: ->
       _.filter @proposals(), (proposal) ->
