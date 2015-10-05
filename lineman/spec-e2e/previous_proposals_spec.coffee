@@ -1,10 +1,11 @@
 describe 'Previous proposals', ->
 
-  groupsHelper = require './helpers/groups_helper.coffee'
+  previousProposalsPage = require './helpers/previous_proposals_helper.coffee'
 
   beforeEach ->
-    groupsHelper.loadWithClosedProposal()
+    previousProposalsPage.load()
 
   describe 'previous proposals page', ->
     it 'displays proposal previews for each closed proposal', ->
-      
+      expect(previousProposalsPage.proposalTitle()).toContain('lets go hiking to the moon')
+
